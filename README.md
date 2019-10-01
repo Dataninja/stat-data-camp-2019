@@ -13,7 +13,7 @@ Pre-requisiti:
 
 Installazione:
 
-- Creare cartella di progetto sul disco: `mkdir my-project && cd my-project/`
+- Creare la cartella di progetto sul disco: `mkdir my-project && cd my-project/`
 - Attivare il virtualenv: `pipenv --three shell`
 - Installare il kernel: `pipenv install ipykernel`
 - Lanciare il kernel: `python -m ipykernel install --user`
@@ -25,17 +25,18 @@ Pre-requisiti:
 
 - Installare R
 - Installare packrat (globally): `sudo R -e 'install.packages("packrat")'`
-- Installare le librerie necessarie: `sudo apt install libssl-dev libxml2-dev`
+- Installare le librerie necessarie: `sudo apt install libssl-dev libxml2-dev libcurl4-openssl-dev`
 
 Installazione:
 
-- Creare cartella di progetto sul disco: `mkdir my-project && cd my-project/`
+- Creare la cartella di progetto sul disco: `mkdir my-project && cd my-project/`
 - Attivare il virtualenv: `R -e packrat::init()`
 - Installare le dipendenze del kernel (R shell): `install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))`
 - Installare il kernel: `devtools::install_github('IRkernel/IRkernel')`
 - Lanciare il kernel: `IRkernel::installspec()`
 - Sostituire il comando in ~/.local/share/jupyter/kernels/ir/kernel.json con `packrat::init(\"my_project_abs_path\"); IRkernel::main()`
 - Installare eventuali dipendenze del proprio progetto (R shell): `install.packages(c([dependencies]))`
+- Salvare le dipendenze (R shell): `packrat::snapshot()`
 
 ### Javascript
 
